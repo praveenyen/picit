@@ -53,7 +53,7 @@ const pexels = () => {
                 </div>
                 <div className="row">
                     <div className="col-sm-12 my-5">
-                        <input type="text" name="query" value={searchQuery} placeholder="Search Photos" onChange={e => { search(e) }} />
+                        <input type="text" name="query" placeholder="Search Photos" onChange={e => { search(e) }} />
                     </div>
                 </div>
                 <div className="row">
