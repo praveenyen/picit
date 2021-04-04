@@ -46,14 +46,15 @@ const pexels = () => {
     return (
         <div>
             <div className="container">
-                <div className="card">
-                    <div className="card-header">
-                        <h2>Pick It</h2>
+                <div className="card nav-card">
+                    <div className="card-header py-0">
+                        <img src="/picit_logo.png" alt="Vercel Logo" className={styles.logo} />
+                        {/* <h2 className="font-weight-bold">Pic It</h2> */}
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-12 my-5">
-                        <input type="text" name="query" placeholder="Search Photos" onChange={e => { search(e) }} />
+                        <input className="form-control alternate-input" type="text" name="query" placeholder="Search Photos" onChange={e => { search(e) }} />
                     </div>
                 </div>
                 <div className="row">
@@ -67,7 +68,7 @@ const pexels = () => {
                     })}
                 </div>
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-md-2 mt-5">
+                    <div className="col-md-2 my-5">
                         <button className="btn btn-primary" onClick={e => loadMore(e)}>Load More</button>
                     </div>
                 </div>
