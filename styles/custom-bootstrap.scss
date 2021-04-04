@@ -1,0 +1,9 @@
+$theme-colors: (
+    "primary": #ffb800,
+);
+
+$btn-border-radius: 3000px;
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "mixins.scss";
