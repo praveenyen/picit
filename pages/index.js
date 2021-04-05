@@ -5,6 +5,7 @@ import {
 } from 'next-auth/client';
 const client = createClient('563492ad6f917000010000011070a3625d3e4a8387879fdb8392db23')
 
+import User from '../layout/user'
 import styles from './search.module.scss'
 
 const pexels = () => {
@@ -50,32 +51,9 @@ const pexels = () => {
         setImages(loadMore)
         setPageImages([...pageImages, ...loadMore.photos])
     }
-
-    const getMenu = () => {
-        if (session) {
-            return <>
-                <button className="btn btn-primary" onClick={() => signIn()}>Collections</button>
-                {/* <button className="btn btn-primary mx-2" onClick={() => signOut()}>Log Out</button> */}
-            </>
-        } else {
-            return <>
-                <button className="btn btn-primary" onClick={() => signIn()}>Sign in</button>
-            </>
-        }
-    }
     return (
         <div>
             <div className="container">
-                <div className="card nav-card">
-                    <nav class="navbar navbar-light bg-light justify-content-between">
-                        <a class="navbar-brand">
-                            <img src="/picit_logo.png" alt="Vercel Logo" className={styles.logo} />
-                        </a>
-                        <div className="">
-                            {getMenu()}
-                        </div>
-                    </nav>
-                </div>
                 <div className="row">
                     <div className="col-sm-12 mt-4 mb-1 pt-2">
                         <input className="form-control alternate-input" type="text" name="query" placeholder="Search Photos" onChange={e => { search(e) }} />
@@ -101,5 +79,7 @@ const pexels = () => {
         </div>
     );
 }
+
+pexels.layout = User;
 
 export default pexels;
