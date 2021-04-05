@@ -9,11 +9,11 @@ const user = (props) => {
     const getMenu = () => {
         if (session) {
             return <>
-                <Link href="/collections">
+                {/* <Link href="/collections">
                     <button className="btn btn-primary">Collections</button>
-                </Link>
+                </Link> */}
                 <Link href="/favourites">
-                    <button className="btn btn-primary  mx-2">Favourites</button>
+                    <button className="btn btn-primary  mx-2">Liked</button>
                 </Link>
                 <button className="btn btn-primary" onClick={() => signOut()}>Log Out</button>
             </>

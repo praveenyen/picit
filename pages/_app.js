@@ -1,5 +1,6 @@
 import '../styles/globals.scss'
 import '../styles/custom-bootstrap.scss'
+import 'animate.css/animate.css'
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "next/app";

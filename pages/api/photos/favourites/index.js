@@ -8,7 +8,7 @@ export default async (req, res) => {
 
     switch (req.method) {
         case 'GET':
-            const userFav = await getUserFavourites(findUser.user._id);
+            const userFav = await getUserFavourites(findUser.user.userId);
             res.status(201).json({
                 data: userFav
             })
@@ -16,7 +16,7 @@ export default async (req, res) => {
         case 'POST':
             if (findUser.userFound) {
                 const favourites = await db.collection('favourites').insert({
-                    userId: findUser.user._id,
+                    userId: findUser.user.userId,
                     ...req.body
                 })
                 res.status(200).json({

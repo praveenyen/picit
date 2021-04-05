@@ -18,7 +18,7 @@ const pexels = () => {
     useEffect(() => {
         const fetchPexelImages = async () => {
             console.log('Fetching the pexel images')
-            const curatedPhotos = await client.photos.curated({ per_page: 8 });
+            const curatedPhotos = await client.photos.curated({ per_page: 12 });
             setImages(curatedPhotos)
             setPageImages(curatedPhotos.photos)
         }
@@ -32,9 +32,9 @@ const pexels = () => {
         const query = event.target.value;
         let searchPhotos = {};
         if (!query) {
-            searchPhotos = await client.photos.curated({ per_page: 8 })
+            searchPhotos = await client.photos.curated({ per_page: 12 })
         } else {
-            searchPhotos = await client.photos.search({ query: query, per_page: 8 })
+            searchPhotos = await client.photos.search({ query: query, per_page: 12 })
         }
         setImages(searchPhotos)
         setSearchQuery(query)
