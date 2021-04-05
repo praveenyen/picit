@@ -12,7 +12,10 @@ const user = (props) => {
                 <Link href="/collections">
                     <button className="btn btn-primary">Collections</button>
                 </Link>
-                <button className="btn btn-primary mx-2" onClick={() => signOut()}>Log Out</button>
+                <Link href="/favourites">
+                    <button className="btn btn-primary  mx-2">Favourites</button>
+                </Link>
+                <button className="btn btn-primary" onClick={() => signOut()}>Log Out</button>
             </>
         } else {
             return <>
