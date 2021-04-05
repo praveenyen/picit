@@ -1,0 +1,33 @@
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.imageContainer:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .overlay {
+        opacity: 1;
+    }
+}
+@media (max-width: 480px) {
+    /* smartphones, Android phones, landscape iPhone */
+    .overlay {
+        opacity: 1;
+    }
+}

@@ -3,8 +3,10 @@ import {
     useSession, signIn, signOut
 } from 'next-auth/client';
 import User from '../../layout/user'
+import styles from './collection.module.scss'
 
 import { connectToDatabase } from '../../util/mongodb'
+import Photo from '../../components/Photo'
 
 const index = ({ collections, isConnected }) => {
     return (
@@ -18,10 +20,7 @@ const index = ({ collections, isConnected }) => {
                             {collection.photos.map(photo => {
                                 return <>
                                     <div className="col-sm-12 col-md-2 mb-4">
-                                        <img src={photo.src.portrait} alt="Photo 1" style={{
-                                            borderRadius: '10px',
-                                            width: '100%'
-                                        }} />
+                                        <Photo photo={photo} />
                                     </div>
                                 </>
                             })}

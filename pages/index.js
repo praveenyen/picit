@@ -7,6 +7,7 @@ const client = createClient('563492ad6f917000010000011070a3625d3e4a8387879fdb839
 
 import User from '../layout/user'
 import styles from './search.module.scss'
+import Photo from '../components/Photo'
 
 const pexels = () => {
     const [images, setImages] = useState([]);
@@ -61,11 +62,8 @@ const pexels = () => {
                 </div>
                 <div className="row">
                     {pageImages?.map(image => {
-                        return <div className="col-sm-12 col-md-3 my-2">
-                            <img className="img-fluid" style={{
-                                borderRadius: '10px',
-                                width: '100%'
-                            }} src={image?.src?.medium} alt="photo" />
+                        return <div className="col-xs-12 col-sm-6 col-md-3 my-2">
+                            <Photo photo={image} />
                         </div>
                     })}
                 </div>
