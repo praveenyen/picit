@@ -9,10 +9,16 @@ const Photo = ({ photo }) => {
     const addToFavourite = async () => {
         const addRequest = await axios.post(`/api/photos/favourites/`, photo);
         setIsUpVoted(true)
+        setTimeout(() => {
+            setIsUpVoted(false)
+        }, 10000);
     };
     const downVote = async () => {
         const deleteRequest = await axios.delete(`/api/photos/favourites/${photo.id}`, photo);
         setIsDownVoted(true);
+        setTimeout(() => {
+            setIsDownVoted(false)
+        }, 10000);
     }
 
     return (
