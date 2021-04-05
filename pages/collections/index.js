@@ -13,7 +13,7 @@ const index = ({ collections, isConnected }) => {
                 {collections?.map(collection => {
                     return <>
                         <h3 className="subheader font-weight-bold mt-4">{collection.name}</h3>
-                        <hr/>
+                        <hr />
                         <div className="row">
                             {collection.photos.map(photo => {
                                 return <>
@@ -41,14 +41,18 @@ export async function getServerSideProps(context) {
     const isConnected = await client.isConnected()
     const sessionToken = context.req.cookies['next-auth.session-token'];
     const userSession = await db.collection('sessions').findOne({ sessionToken: sessionToken })
-    console.log('User')
-    console.log(userSession)
 
     if (!isConnected) {
         console.log('error')
     }
 
-    const collections = await db.collection('collection').find({ userId: userSession._id }).toArray();
+    if (!userSession) {
+        return {
+            props: { isConnected, collections: [] }
+        }
+    }
+
+    const collections = await db.collection('collection').find({ userId: userSession.userId }).toArray();
 
     // const createCollections = await db.collection('collection').insertOne(
     //     {
