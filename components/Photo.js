@@ -7,7 +7,7 @@ const Photo = ({ photo }) => {
     const [isUpVoted, setIsUpVoted] = useState(false);
     const [isDownVoted, setIsDownVoted] = useState(false);
     const addToFavourite = async () => {
-        const addRequest = await axios.post(`/api/photos/favourites/`, photo);
+        const addRequest = await axios.post(`/api/photos/favourites`, photo);
         setIsUpVoted(true)
         setTimeout(() => {
             setIsUpVoted(false)
@@ -25,7 +25,7 @@ const Photo = ({ photo }) => {
         <div className={`
         ${styles.imageContainer} 
         ${isUpVoted && 'animate__animated animate__heartBeat animate__repeat-2'}
-        ${isDownVoted && 'animate__animated animate__flipOutX animate__repeat-1'}
+        ${isDownVoted && 'animate__animated animate__flipOutX animate__repeat-1 d-none'}
         `}>
             <LazyLoadImage src={photo.src.portrait} alt="Photo 1" style={{
                 borderRadius: '10px',

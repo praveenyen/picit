@@ -9,10 +9,7 @@ export default async (req, res) => {
     switch (req.method) {
         case 'DELETE':
             const { photo_id } = req.query;
-            console.log('In delete method')
-            console.log(photo_id)
             if (findUser.userFound) {
-                console.log(`user ${findUser.user.userId}`)
                 const deleted = await db.collection("favourites").deleteMany({
                     id: Number(photo_id),
                     userId: findUser.user.userId
@@ -25,6 +22,7 @@ export default async (req, res) => {
                     data: 'Unable to delete it.'
                 })
             }
+            break;
 
         default:
             res.status(500).json({
