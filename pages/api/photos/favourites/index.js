@@ -15,12 +15,17 @@ export default async (req, res) => {
             break;
         case 'POST':
             if (findUser.userFound) {
-                const favourites = await db.collection('favourites').insert({
+                const favourites = await db.collection('favourites').insertOne({
                     userId: findUser.user.userId,
                     ...req.body
                 })
                 res.status(200).json({
-                    data: favourites
+                    data: favourites,
+                    message: findUser
+                })
+            } else {
+                res.status(400).json({
+                    data: 'Unable to add into the likes.'
                 })
             }
             break;
