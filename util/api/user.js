@@ -11,7 +11,8 @@ export const getUser = async (sessionToken) => {
         }
     }
     return {
-        userFound: false
+        userFound: false,
+        user: { userId: false }
     }
 }
 
