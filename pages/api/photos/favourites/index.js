@@ -3,7 +3,10 @@ import { connectToDatabase } from '../../../../util/mongodb'
 
 export default async (req, res) => {
     const { client, db } = await connectToDatabase()
-    const sessionToken = req.cookies['next-auth.session-token'];
+    let sessionToken = req.cookies['next-auth.session-token'];
+    if (sessionToken.length < 1) {
+        sessionToken = req.cookies['__Secure-next-auth.session-token'];
+    }
     const findUser = await getUser(sessionToken)
 
     switch (req.method) {
