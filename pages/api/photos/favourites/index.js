@@ -25,7 +25,8 @@ export default async (req, res) => {
                 })
             } else {
                 res.status(400).json({
-                    data: 'Unable to add into the likes.'
+                    data: 'Unable to add into the likes.',
+                    message: findUser
                 })
             }
             break;
