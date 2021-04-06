@@ -33,12 +33,8 @@ const Photo = ({ photo }) => {
             }} />
             <div className={styles.overlay}>
                 <div className="row justify-content-around">
-                    <div className="col-4">
-                        <span class="badge rounded-pill bg-success" onClick={e => addToFavourite()}>Up</span>
-                    </div>
-                    <div className="col-4">
-                        <span class="badge rounded-pill bg-info" onClick={e => downVote()}>Down</span>
-                    </div>
+                    <span className={`${styles.pointer} badge rounded-pill bg-success`} onClick={e => addToFavourite()}>Up</span>
+                    <span className={`${styles.pointer} badge rounded-pill bg-info`} onClick={e => downVote()}>Down</span>
                 </div>
             </div>
         </div >

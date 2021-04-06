@@ -23,11 +23,17 @@
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
     .overlay {
         opacity: 1;
+        padding: 5px;
     }
 }
 @media (max-width: 480px) {
     /* smartphones, Android phones, landscape iPhone */
     .overlay {
         opacity: 1;
+        padding: 5px;
     }
+}
+
+.pointer {
+    cursor: pointer;
 }

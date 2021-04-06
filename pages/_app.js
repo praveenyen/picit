@@ -40,8 +40,7 @@ export default class MyApp extends App {
             />
             <meta name="description" content="Description" />
             <meta name="keywords" content="Keywords" />
-            <title>RGUKT Hub | Open Source Project</title>
-
+            <title>Free and Open Source Photo Collection Application</title>
             <link rel="manifest" href="/manifest.json" />
             <link
               href="/icons/favicon-16x16.png"

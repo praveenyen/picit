@@ -1,11 +1,7 @@
-module.exports = {
-    async redirects() {
-        return [
-            {
-                source: '/search',
-                destination: '/',
-                permanent: true,
-            },
-        ]
-    },
-}
+const withPWA = require('next-pwa')
+
+module.exports = withPWA({
+    pwa: {
+        dest: 'public'
+    }
+})

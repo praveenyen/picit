@@ -17,7 +17,6 @@ const pexels = () => {
 
     useEffect(() => {
         const fetchPexelImages = async () => {
-            console.log('Fetching the pexel images')
             const curatedPhotos = await client.photos.curated({ per_page: 12 });
             setImages(curatedPhotos)
             setPageImages(curatedPhotos.photos)
@@ -62,7 +61,7 @@ const pexels = () => {
                 </div>
                 <div className="row">
                     {pageImages?.map(image => {
-                        return <div className="col-xs-12 col-sm-6 col-md-3 my-2">
+                        return <div className="col-6 col-sm-4 col-md-3 my-2">
                             <Photo photo={image} />
                         </div>
                     })}
